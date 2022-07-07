@@ -3,17 +3,23 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-   /*
+   for(let index = 0; index < json.length; index++){
+    const missionTarget = document.getElementById('missionTarget');
+     missionTarget.innerHTML = ` 
+    <script>
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
-                    <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Name: ${json[index].name} </li>
+                    <li>Diameter: ${json[index].diameter}</li>
+                    <li>Star: ${jason[index].star}</li>
+                    <li>Distance from Earth: ${json[index].distance} </li>
+                    <li>Number of Moons: ${json[index].moons}</li>
                 </ol>
-                <img src="">
-   */
+                <img src="${json[index].image}">
+        
+    </script>
+    `;
+    };
 }
 
 function validateInput(testInput) {
@@ -39,13 +45,21 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch().then( function(response) {
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+        response.json().then( function(json){
+            console.log(json);
+            });
         });
 
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
+    let ranPlanet;
+    for(indexP = 0; indexP < json.length; indexP++){
+         ranPlanet = Math.random();
+    };
+    return ranPlanet;
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
