@@ -1,4 +1,13 @@
 7/10/22 
 Validations are working, but the form itself isn't submitting, I need to go back and look at where to submit in the text so I can remember how to do it in a JS file and not in HTML file. 
+
 myFetch function is not returning anything, perhaps the return needs to be moved up a bit?
-planets in scriptHelper.js is undefined.  
+
+planets in scriptHelper.js is undefined. 
+
+7/11/22 11:26 am
+Validations are working.  Form will submit when everthing is correct with the myFetch function.
+
+myfetch is still not working properly. response is undefined is the thing that seems to be throwing it off.  
+
+At the moment there are no errors with the pickPlanet function, but that could change depending on how the myFetch works out. 
