@@ -1,0 +1,4 @@
+7/10/22 
+Validations are working, but the form itself isn't submitting, I need to go back and look at where to submit in the text so I can remember how to do it in a JS file and not in HTML file. 
+myFetch function is not returning anything, perhaps the return needs to be moved up a bit?
+planets in scriptHelper.js is undefined.  

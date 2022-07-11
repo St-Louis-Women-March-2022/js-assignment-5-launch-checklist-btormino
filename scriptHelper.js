@@ -1,5 +1,5 @@
 // Write your helper functions here!
-require('isomorphic-fetch');
+//require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -29,38 +29,39 @@ function validateInput(testInput) {
         return "is not a Number";
     } else if(isNaN(testInput) === false) {
         return 'is a Number';
-    } //else {
-    //     //need to tell to submit form?
-    // }
+     } //else {
+    //     document.getElementById('launchForm').submit();
+
+    //  }
 }
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    if (validateInput(pilot) === "Empty" || validateInput(copilot) === 'Empty' || validateInput(fuelLevel) === 'Empty' || validateInput(cargoLevel) === 'Empty' ){
       alert ('All fields are required.');
+      
    } else if (validateInput(pilot) === 'is a Number' || validateInput(copilot) === 'is a Number'){
       alert ('The pilot and copilot should have names, not numbers');
    } else if (validateInput(fuelLevel) === 'is not a Number' || validateInput(cargoLevel) === 'is not a Number'){
       alert ('The fuel level and cargo mass should be numbers.');
    }
-    console.log(alert);
+   console.log(alert);
 }
 
 async function myFetch() {
     let planetsReturned;
 
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
-        response.json().then( function(json){
-            console.log(json);
+            return planetsReturned;
             });
-        });
+            
 
-    return planetsReturned;
+    
 }
 
-function pickPlanet(planets) {
+function pickPlanet(listedPlanets) {
     let randPlanet;
-    for(indexP = 0; indexP < json.length; indexP++){
+    for(indexP = 0; indexP < listedPlanets.length; indexP++){
          randPlanet = Math.random();
     };
     return randPlanet;
