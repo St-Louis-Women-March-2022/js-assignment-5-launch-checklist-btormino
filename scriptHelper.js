@@ -34,14 +34,17 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    if (validateInput(pilot) === "Empty" || validateInput(copilot) === 'Empty' || validateInput(fuelLevel) === 'Empty' || validateInput(cargoLevel) === 'Empty' ){
-      alert ('All fields are required.');
+      console.log(alert ('All fields are required.'));
       
    } else if (validateInput(pilot) === 'is a Number' || validateInput(copilot) === 'is a Number'){
-      alert ('The pilot and copilot should have names, not numbers');
+      console.log(alert ('The pilot and copilot should have names, not numbers'));
    } else if (validateInput(fuelLevel) === 'is not a Number' || validateInput(cargoLevel) === 'is not a Number'){
-      alert ('The fuel level and cargo mass should be numbers.');
-   }
-   console.log(alert);
+      console.log(alert ('The fuel level and cargo mass should be numbers.'));
+     } 
+   //console.log(alert);
+   else {
+    document.getElementById('testForm').submit();
+    }
 }
 
 async function myFetch() {

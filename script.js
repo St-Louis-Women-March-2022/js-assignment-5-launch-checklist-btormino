@@ -28,38 +28,22 @@ window.addEventListener("load", function() {
         let fuelLevel = document.querySelector('input[name=fuelLevel]');
         let cargoMass = document.querySelector('input[name=cargoMass]');
         event.preventDefault(); 
-        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);{
-            if (pilotName !== "Chris"){
-                `<li>Has anyone seen Chris?</li>`
-            } else if (copilotName !== "Blake") {
-                `<li>You're not Blake!</li>`
-            } else if (fuelLevel < 10000){
-                 faultyItems === visible;
-                 lauchStatus === "Shuttle not ready for launch.";
-                 color === 'red';
-            } else if (cargoMass > 10000){
-                faultyItems === visible;
-                 lauchStatus === "Shuttle not ready for launch.";
-                 color === 'red';
-            } else{
-                const faultyItems = document.getElementById('faultyItems');
-                faultyItems.innerHTML = `
-               
-                        <h2>Shuttle Ready for Launch</h2>
-                        <ol>
-                            <li>Pilot ${pilotName} is ready for launch.</li>
-                            <li>Co-pilot ${copilotName} is ready for launch.</li>
-                            <li>Fuel level is high enough for launch.</li>
-                            <li>Cargo mass low enough for launch.</li>
-                        </ol>
-                
-                `
-            }
-            
-       };
+        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);
+       
+            if (pilot.value !== "Chris"){
+                 document.getElementById('pilotStatus').innerHTML = 'Has anyone seen Chris?';
+            } //else if (copilot.value !== "Blake") {
+            //     `<li>You're not Blake!</li>`
+            // } else if (fuelLevel.value < 10000){
+            //      faultyItems === visible;
+            //      lauchStatus === "Shuttle not ready for launch.";
+            //      color === 'red';
+            // } else if (cargoMass.value > 10000){
+            //     faultyItems === visible;
+            //      lauchStatus === "Shuttle not ready for launch.";
+            //      color === 'red';
+            // }; 
+        });
         
         
     })
-    
-
-});
