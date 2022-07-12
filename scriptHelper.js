@@ -33,19 +33,21 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    let launchStatus = document.getElementById('launchStatus');
    if (validateInput(pilot) === "Empty" || validateInput(copilot) === 'Empty' || validateInput(fuelLevel) === 'Empty' || validateInput(cargoLevel) === 'Empty' ){
-      console.log(alert ('All fields are required.'));
-      
+      alert ('All fields are required.');
    } else if (validateInput(pilot) === 'is a Number' || validateInput(copilot) === 'is a Number'){
-      console.log(alert ('The pilot and copilot should have names, not numbers'));
+      alert ('The pilot and copilot should have names, not numbers');
    } else if (validateInput(fuelLevel) === 'is not a Number' || validateInput(cargoLevel) === 'is not a Number'){
-      console.log(alert ('The fuel level and cargo mass should be numbers.'));
+      alert ('The fuel level and cargo mass should be numbers.');
      } 
+     else{ 
+        launchStatus.innerHTML = 'Check check';
+
+     }
    //console.log(alert);
-   else {
-    document.getElementById('testForm').submit();
     }
-}
+
 
 async function myFetch() {
     let planetsReturned;

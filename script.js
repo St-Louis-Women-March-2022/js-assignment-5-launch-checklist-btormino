@@ -15,9 +15,6 @@ window.addEventListener("load", function() {
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         const planetChoice = pickPlanet(listedPlanets);
         addDestinationInfo(document, planetChoice.name, planetChoice.diameter, planetChoice.star, planetChoice.distance, planetChoice.moons, planetChoice.image);
-
-        
-        
     }) 
   
     let form = document.querySelector("form");
@@ -29,12 +26,11 @@ window.addEventListener("load", function() {
         let cargoMass = document.querySelector('input[name=cargoMass]');
         event.preventDefault(); 
         formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);
-       
-            if (pilot.value !== "Chris"){
-                 document.getElementById('pilotStatus').innerHTML = 'Has anyone seen Chris?';
-            } //else if (copilot.value !== "Blake") {
-            //     `<li>You're not Blake!</li>`
-            // } else if (fuelLevel.value < 10000){
+       document.getElementById('pilotStatus').innerHTML += 
+            `<li>Pilot ${pilot} is ready.`</li>;
+        document.getElementById('copilotStatus').innerHTML += `<li>Copilot ${copilot} is ready.</li>`;
+            
+            // } if (fuelLevel.value < 10000){
             //      faultyItems === visible;
             //      lauchStatus === "Shuttle not ready for launch.";
             //      color === 'red';
