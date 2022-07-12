@@ -28,11 +28,11 @@ window.addEventListener("load", function() {
         let fuelLevel = document.querySelector('input[name=fuelLevel]');
         let cargoMass = document.querySelector('input[name=cargoMass]');
         event.preventDefault(); 
-        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value)//{
+        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);{
             if (pilotName !== "Chris"){
-
+                `<li>Has anyone seen Chris?</li>`
             } else if (copilotName !== "Blake") {
-                
+                `<li>You're not Blake!</li>`
             } else if (fuelLevel < 10000){
                  faultyItems === visible;
                  lauchStatus === "Shuttle not ready for launch.";
@@ -44,7 +44,7 @@ window.addEventListener("load", function() {
             } else{
                 const faultyItems = document.getElementById('faultyItems');
                 faultyItems.innerHTML = `
-                <div>
+               
                         <h2>Shuttle Ready for Launch</h2>
                         <ol>
                             <li>Pilot ${pilotName} is ready for launch.</li>
@@ -52,11 +52,11 @@ window.addEventListener("load", function() {
                             <li>Fuel level is high enough for launch.</li>
                             <li>Cargo mass low enough for launch.</li>
                         </ol>
-                </div>
+                
                 `
             }
             
-       // };
+       };
         
         
     })
