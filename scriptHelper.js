@@ -1,25 +1,24 @@
 // Write your helper functions here!
 //require('isomorphic-fetch');
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+function addDestinationInfo(document, name, diameter, star, distance, moons, image) {
    // Here is the HTML formatting for our mission target div.
-   for(let index = 0; index < json.length; index++){
+  
     const missionTarget = document.getElementById('missionTarget');
      missionTarget.innerHTML = ` 
-    <script>
+  
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: ${json[index].name} </li>
-                    <li>Diameter: ${json[index].diameter}</li>
-                    <li>Star: ${jason[index].star}</li>
-                    <li>Distance from Earth: ${json[index].distance} </li>
-                    <li>Number of Moons: ${json[index].moons}</li>
+                    <li>Name: ${name} </li>
+                    <li>Diameter: ${diameter}</li>
+                    <li>Star: ${star}</li>
+                    <li>Distance from Earth: ${distance} </li>
+                    <li>Number of Moons: ${moons}</li>
                 </ol>
-                <img src="${json[index].image}">
-        
-    </script>
+                <img src="${image}">
+
     `;
-    };
+   
 }
 
 function validateInput(testInput) {
@@ -29,10 +28,7 @@ function validateInput(testInput) {
         return "is not a Number";
     } else if(isNaN(testInput) === false) {
         return 'is a Number';
-     } //else {
-    //     document.getElementById('launchForm').submit();
-
-    //  }
+     } 
 }
 
 
@@ -52,17 +48,18 @@ async function myFetch() {
     let planetsReturned;
 
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
-            return planetsReturned;
+            return response.json();
             });
-            
+           return planetsReturned; 
 
-    
+
 }
 
 function pickPlanet(listedPlanets) {
     let randPlanet;
-    for(indexP = 0; indexP < listedPlanets.length; indexP++){
-         randPlanet = Math.random();
+    {
+    randIndex = Math.floor(Math.random() * 6);
+    randPlanet = listedPlanets[randIndex];
     };
     return randPlanet;
 }
