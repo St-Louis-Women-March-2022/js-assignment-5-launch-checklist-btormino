@@ -3,19 +3,19 @@
 //const { formSubmission, myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function(planetsReturned) {
        listedPlanets = planetsReturned;
        console.log(listedPlanets);
-   } ).then(function () {
+   }).then(function () {
        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         const planetChoice = pickPlanet(listedPlanets);
         addDestinationInfo(document, planetChoice.name, planetChoice.diameter, planetChoice.star, planetChoice.distance, planetChoice.moons, planetChoice.image);
-    }) 
+    })
+
   
     let form = document.querySelector("form");
     form.addEventListener("submit", function(event){
@@ -25,21 +25,9 @@ window.addEventListener("load", function() {
         let fuelLevel = document.querySelector('input[name=fuelLevel]');
         let cargoMass = document.querySelector('input[name=cargoMass]');
         event.preventDefault(); 
-        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value);
-       document.getElementById('pilotStatus').innerHTML += 
-            `<li>Pilot ${pilot} is ready.`</li>;
-        document.getElementById('copilotStatus').innerHTML += `<li>Copilot ${copilot} is ready.</li>`;
-            
-            // } if (fuelLevel.value < 10000){
-            //      faultyItems === visible;
-            //      lauchStatus === "Shuttle not ready for launch.";
-            //      color === 'red';
-            // } else if (cargoMass.value > 10000){
-            //     faultyItems === visible;
-            //      lauchStatus === "Shuttle not ready for launch.";
-            //      color === 'red';
-            // }; 
-        });
+
+        formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoMass.value)
+       
         
-        
+        });   
     })
