@@ -46,7 +46,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
       alert ('The fuel level and cargo mass should be numbers.');
       //console.log(alert);
      }  else {
-        if(fuelLevel <= 10000 && cargoLevel <= 10000){
+        if(fuelLevel < 10000 && cargoLevel < 10000){
         list.style.visibility = 'visible';
         launchStatus.innerHTML = "Shuttle not ready for launch.";   
         launchStatus.style.color = 'red';
@@ -56,7 +56,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         fuelStatus.innerHTML = 'Shuttle does not have enough fuel to make the journey.';
         cargoStatus.innerHTML = "Cargo mass low enough for launch.";
         } 
-    else if (fuelLevel >= 10000 && cargoLevel >= 10000){
+    else if (fuelLevel > 10000 && cargoLevel > 10000){
         list.style.visibility = 'visible';
         launchStatus.innerHTML = "Shuttle not ready for launch.";
         launchStatus.style.color = 'red';
@@ -66,7 +66,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         fuelStatus.innerHTML = " Fuel level high enough for launch."
         cargoStatus.innerHTML = "There's too much junk in this trunk to launch.";
         }
-    else if (cargoLevel >= 10000 && fuelLevel <= 10000){
+    else if (fuelLevel < 10000 &&cargoLevel > 10000){
         list.style.visibility = 'visible';
         launchStatus.innerHTML = "Shuttle not ready for launch.";
         launchStatus.style.color = 'red';
@@ -107,8 +107,8 @@ function pickPlanet(listedPlanets) {
     return randPlanet;
 }
 
-// module.exports.addDestinationInfo = addDestinationInfo;
-// module.exports.validateInput = validateInput;
-// module.exports.formSubmission = formSubmission;
-// module.exports.pickPlanet = pickPlanet; 
-// module.exports.myFetch = myFetch;
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet; 
+module.exports.myFetch = myFetch;

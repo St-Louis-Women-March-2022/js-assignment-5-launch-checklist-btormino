@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { formSubmission, myFetch } = require("./scriptHelper");
+//const { formSubmission, myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
    let listedPlanets;
